@@ -1,4 +1,4 @@
-OPTCG Win/Loss and Ranking tracker using Bandai TCG+ 
+OPTCG Win/Loss and Ranking tracker using Bandai TCG+ (Works on Chrome browser only)
 
 How to use:
 
