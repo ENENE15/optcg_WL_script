@@ -30,7 +30,7 @@ How to use:
 
 6. It should automatically start going through match history for Win/Loss counts and ranking
 
-<img width="536" height="164" alt="image" src="https://github.com/user-attachments/assets/ffe934d7-2a1a-4fa7-92d6-6b9bde39cd87" />
+<img width="714" height="218" alt="image" src="https://github.com/user-attachments/assets/0b4aea3f-8f96-4891-b26e-be93942e4965" />
 
 7. After it's done going through all the valid events on Bandai TCG+, it will save it in match_history.csv in the same dist folder (optcg_WL_script\dist)
 
@@ -46,6 +46,22 @@ How to use:
 
 NOTE:
 For Total # of wins/losses/matches: Use =SUM() function on the row of wins/loss and for total # of matches, use =SUM() of total # of wins + total # of loss
+
 For Total winrate: (total # of wins) / (total # of matches)
+
 For Total # of 1st place rankings, on the rankings row use the function =COUNTIF(D2:D108,"=1") to see how many 1st places you got
+
 For other excel/google sheets operations, ask chatGPT or google
+
+
+Known Errors/problems:
+1. Sometimes Bandai TCG+ will just bug out and show errors, in which case you need to re-attempt the scraping from the beginning
+
+<img width="568" height="250" alt="image" src="https://github.com/user-attachments/assets/38ba5ccd-261c-467a-bfd8-46787493f0e6" />
+
+2. Because Bandai TCG+ doesn't allow public access to their APIs and data, this tracker is done all through Selenium web scraper, hence the long wait time. Average time to record 1 event's match history is about 4~5 seconds and Based on my 145 events, it took about 10 mins. Which means if you've got a lot of events in history it will take forever and it is more prone to Bandai TCG+ crashing on you or the code having some bugs.
+
+3. Once the script runs successfully until the last event, and once it's done with the last event you get this error message on terminal:
+line 61, in <module> event = events[i] ~~~~~~^^^ IndexError: list index out of range
+If that's after it is done compiling all results including last event, then you can ignore and go straight to the match_history.csv to play with your data
+
