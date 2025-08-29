@@ -24,11 +24,9 @@ How to use:
 
 4. Once logged in you will be sent to the event history page. Feel free to adjust the event dates, locations, etc... to get the range of winrate data you want
 
-<img width="851" height="809" alt="image" src="https://github.com/user-attachments/assets/d50d6ff6-2af3-44d6-bf69-2d0821f400bb" />
+<img width="868" height="653" alt="image" src="https://github.com/user-attachments/assets/8aa9cb30-13f7-4688-a0ef-10e38dccbbf2" />
 
 5. Once you are done with logging in and on the history page as shown above, go back to the terminal/command prompt and press ENTER key once
-
-<img width="868" height="653" alt="image" src="https://github.com/user-attachments/assets/8aa9cb30-13f7-4688-a0ef-10e38dccbbf2" />
 
 6. It should automatically start going through match history for Win/Loss counts and ranking
 
@@ -46,3 +44,8 @@ How to use:
 
 <img width="214" height="41" alt="image" src="https://github.com/user-attachments/assets/27758399-f521-49a3-bf8f-a054cb2e9732" />
 
+NOTE:
+For Total # of wins/losses/matches: Use =SUM() function on the row of wins/loss and for total # of matches, use =SUM() of total # of wins + total # of loss
+For Total winrate: (total # of wins) / (total # of matches)
+For Total # of 1st place rankings, on the rankings row use the function =COUNTIF(D2:D108,"=1") to see how many 1st places you got
+For other excel/google sheets operations, ask chatGPT or google
